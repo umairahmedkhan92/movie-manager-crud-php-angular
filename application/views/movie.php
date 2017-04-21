@@ -10,21 +10,29 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Umair Movie Manager</title>
 
-	<!-- Bootstrap -->
+	<!-- Bootstrap and CSS -->
 	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel="stylesheet">
 	<link rel="stylesheet" type="text/css" href="/assets/app.css">
 </head>
+
+<!-- Start of boday. Initilization of ng-app -->
 <body ng-app="movieApp">
+
+	<!-- Included Header -->
 	<?php include("navigation/header.php") ?>
+
+	<!-- Container for showing movies -->
 	<div class="container" ng-controller="movieController" ng-init="getMovies()">
 		<h1>Movies</h1>
 		<div class="row">
 			<button class="btn btn-primary pull-right" onclick="$('.formData').slideToggle();"><i class="glyphicon glyphicon-plus"></i> Add Movie</button>
 
 			<div class="panel panel-default movies-content">
+				<!-- For displaying alert messages -->
 				<div class="alert alert-danger none"><p></p></div>
 				<div class="alert alert-success none"><p></p></div>
 				<div class="panel-body none formData">
+					<!-- Movie input form -->
 					<form class="form" name="movieForm">
 						<div class="form-group">
 							<label>*Title</label>
@@ -68,6 +76,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 						<button type="submit" class="btn btn-success" ng-hide="!movieData.id" ng-click="updateMovie(movieForm.$valid)">Update Movie</a>
 					</form>
 				</div>
+				<!-- Movie dispaly table -->
 				<table id="movieTable" class="table table-striped">
 					<tr>
 						<th>#</th>
@@ -95,6 +104,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 		</div>
 	</div>
 
+	<!-- Javascript files -->
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.7/angular.min.js"></script>

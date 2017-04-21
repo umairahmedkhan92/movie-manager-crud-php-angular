@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Movie extends CI_Controller {
 
 	/**
-	*/
+	 * Constructor funtion used for loading model class
+	 */
 	public function __construct()
     {
         parent::__construct();
@@ -12,6 +13,8 @@ class Movie extends CI_Controller {
     }
 
 	/**
+     * For shwoing default view
+     * @return void
 	 */
 	public function index()
 	{
@@ -19,6 +22,8 @@ class Movie extends CI_Controller {
 	}
 
 	/**
+     * For getting the list of all the movies and passing it back to view
+     * @return stirng
 	 */
 	public function view()
 	{
@@ -33,6 +38,8 @@ class Movie extends CI_Controller {
 	}
 
 	/**
+     * For validating the input data and inserting it into database and updating the view
+     * @return stirng
 	 */
 	public function add()
 	{
@@ -74,6 +81,8 @@ class Movie extends CI_Controller {
 	}
 
 	/**
+     * For validating the updated data and updating it into database and push back changes to the view
+     * @return stirng
 	 */
 	public function edit()
 	{
@@ -115,6 +124,8 @@ class Movie extends CI_Controller {
 	}
 
 	/**
+     * For deleting the movie data from database and passing confirmation to the view
+     * @return stirng
 	 */
 	public function delete()
 	{

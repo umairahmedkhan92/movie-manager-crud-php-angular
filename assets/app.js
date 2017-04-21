@@ -1,8 +1,8 @@
-// define application
+// define the movie application module
 angular.module("movieApp", []).controller("movieController", function($scope,$http){
     $scope.movies = [];
     $scope.movieData = {};
-    // function to get records from the database
+    // function to get movies from the database
     $scope.getMovies = function(){
         $http.get("/movie/view")
         .success(function(response){
@@ -123,6 +123,7 @@ angular.module("movieApp", []).controller("movieController", function($scope,$ht
         });
     };
 
+    // function to convert movie length for display 
     $scope.convertLength = function(length){
         var hours = Math.floor(length / 60);          
         var minutes = length % 60;
